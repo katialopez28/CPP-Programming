@@ -1,0 +1,55 @@
+Create a pencil machine with the behaviors described below.
+
+Required elements
+1. Pencil price must be a define and not hardcoded throughout the program. Changing the price of a pencil 
+should only require changing the define and not anything else in the program.
+
+2. Create a function to display any money amounts as a string containing $xx.yy where xx is the number of dollars 
+and yy is the number of cents. Anywhere a money amount needs to be displayed by the program, this function
+must be called. C++ library function to_string() must be used.
+
+3. Create a function to buy pencils. This function should:
+a) Not print anything or accept anything (no cins or couts) – everything is passed in/passed back
+b) Check inventory level
+c) Check if exact payment was entered or not
+d) Check if enough change is already in the machine to give back change to the user. Money from the 
+payment itself may not be used for providing change for the payment during the current transaction. 
+For example, if the required payment is $6.00 and the user gives a payment of $10.00 and there is $2.00 
+of change in the machine, then the machine should not accept the payment since $4.00 of change is 
+required and the machine only contains $2.00 of change. Payment amount should be added to change 
+level after change has been given.
+e) Check if insufficient payment was given
+f) Decrement inventory level and increment change level as needed.
+g) This function will have a return type of boolean and a parameter that tells main() what happened/the 
+status of the transaction. 
+If true is returned, then 
+  Pencils were sold and change was given (status)
+  or
+  Pencils were sold and exact payment was given and no change was needed (status)
+else false was returned
+  not enough inventory to complete purchase (status)
+  or
+  not enough change was available to complete the purchase (status)
+  or
+  the provided payment was insufficient (no sale took place) (status)
+  or
+  something unknown happened (status)
+  
+The values returned in the status variable should be enumerated to make your program more readable. For 
+example, set your status variable to an enumeration of OK rather than a value of 0.
+
+
+4. Create a function to handle the menu. Your menu should look like the menu in the video. It should print the 
+menu and handle getting the user’s input. The call to the menu function should be in a conditional loop in 
+main() so that the program will keep running until the user chooses to exit.
+
+5. The variables for tracking the inventory level and change level will be declared in main() and will be passed to 
+your function to buy pencils. You will need to pass those by reference so that the increments/decrements made 
+in your buy pencils function continue to exist outside of the function. To facilitate uniform testing for the GTAs, 
+please initialize inventory level to 100 and change level to 500 (500 cents which is $5.00 – we will not use floats 
+to represent money – we will be using the number of cents).
+
+6. Create a switch statement in main() that acts upon the menu choice returned by your menu handling 
+function.
+
+7. Based on the status returned by your buy a pencil function, main() should print the messages to the user.
