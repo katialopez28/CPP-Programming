@@ -1,0 +1,32 @@
+Coke Machine - Object-Oriented Design
+
+
+~ How to compile and run programs ~
+1. Download all files including: CokeLib.cpp, Code4.cpp, CokeMachine.cpp, and CokeLib.h
+2. Download makefile which will compile these 3 files and creates an executable named Code4.e
+    Code4.cpp
+    CokeMachine.cpp
+    CokeLib.cpp
+
+
+Assumptions:
+1. The CokeMachine only dispenses Coke and no other types of items.
+2. Payments are entered in pennies - $0.50 is entered as 50, $1.00 is entered as 100.
+3. Any displays of change will be in dollars and cents.
+4. Any payment entered cannot be used as part of the dispensed change. For example, if the user enter 1234 ($12.54) 
+   for payment, then the machine will only dispense a Coke if is has enough change for 1204.
+5. When restocking the machine, the entire restock request has to fit. If the entire quantity does not fit, then the restock 
+   request is rejected
+   
+Class Diagram:
+The Class Diagram is included in this Repository as 'CokeMachine Class.png'. Please note that exact names (spellings and case) were used
+
+Code4.cpp:
+Create a menu in your .cpp file to use your Coke Machine.
+0. Walk away
+1. Buy a Coke
+2. Restock Machine
+3. Add change
+4. Display Machine Info
+5. Update Machine Name
+6. Update Coke Price
